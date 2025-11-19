@@ -1,0 +1,140 @@
+Create a modern, responsive one-page website for a company called “NovyxDev” using React and Tailwind CSS. The code must be clean, modular, well-structured, and divided into components. There must be NO login or registration system.
+ 
+All UI text on the website must be in Hungarian.
+ 
+GENERAL GOAL
+------------
+The website should:
+- present who the NovyxDev team is (“kik vagyunk mi”),
+- showcase our reference works (websites, projects),
+- present our services in detail,
+- allow visitors to send us an email through a contact form.
+ 
+DESIGN & STYLE
+--------------
+- Color palette: blue + white (various shades of blue + white), NO gradients, only solid colors.
+- Use a modern, unique font (e.g., “Poppins” or similar) consistently across the site.
+- Clean, modern SaaS-style layout.
+- Rounded corners, card shadows, hover effects on buttons and cards.
+- Everything must be styled using Tailwind utility classes.
+ 
+PAGE STRUCTURE / SECTIONS
+-------------------------
+ 
+1. NAVBAR (fixed)
+   - Left side: “NovyxDev” logo/text.
+   - Right side menu items:
+     - “Főoldal”
+     - “Referenciák”
+     - “Szolgáltatásaink”
+     - “Rólunk”
+     - “Kapcsolat”
+   - Mobile: hamburger menu (offcanvas or dropdown).
+ 
+2. HERO SECTION
+   - Large title (in Hungarian): e.g., “Professzionális weboldalak a NovyxDev-től”
+   - Subtitle describing that we build custom, modern websites.
+   - CTA buttons: “Referenciáink megtekintése”, “Ajánlatkérés”.
+   - A mockup or preview images as visual elements.
+ 
+3. REFERENCES SECTION (“Referenciák”)
+   - Title: “Referencia munkáink”
+   - Short description.
+   - Grid of reference cards:
+     - Project name
+     - Category (pl. Vállalati weboldal, Webshop, Landing page…)
+     - Short description
+     - Tech stack
+     - Image (placeholder allowed)
+     - Rating (1–5 stars)
+   - Each card must be clickable:
+     - Opens a modal or overlay:
+       - Larger images
+       - Detailed description
+       - Feature list
+       - Client name (e.g. “Demo Ügyfél”)
+       - Rating + short client quote
+   - FILTERS & CATEGORIES:
+     - Category filter (“Mind”, “Vállalati”, “Webshop”…)
+     - Tech stack filter (“React”, “WordPress”, etc.)
+     - Optional sorting (e.g., best rated).
+     - Filtering must work on the frontend using a data array.
+ 
+4. SERVICES SECTION (“Szolgáltatásaink”)
+   - Title: “Szolgáltatásaink”
+   - Intro text explaining what we offer.
+   - Service cards (categories):
+     - “Egyedi weboldal fejlesztés”
+     - “Landing page készítés”
+     - “Webáruház fejlesztés”
+     - “Weboldal újratervezés / redesign”
+   - Each card:
+     - Title
+     - Short description
+     - Optional icon
+   - Include a subsection with “example websites”:
+     - Card with image
+     - Description and features
+ 
+5. REVIEWS CAROUSEL (“Ügyfélvélemények”)
+   - Title: “Ügyfeleink mondták rólunk”
+   - A fast-spinning, continuously looping carousel:
+     - Displays 4–5 review cards at once on desktop (less on mobile).
+     - Auto-plays infinitely.
+     - Each review card includes:
+       - Client name
+       - Star rating
+       - A short 2–3 sentence review
+     - Optional manual navigation (arrows or dots).
+ 
+6. ABOUT SECTION (“Rólunk”)
+   - Title: “Kik vagyunk mi?”
+   - Text about the NovyxDev team:
+     - Mission
+     - Short story
+     - Bullet list: why work with us
+   - Optional team member cards (photo/placeholder + name + role + description).
+ 
+7. CONTACT SECTION (“Kapcsolat”)
+   - Title: “Lépj velünk kapcsolatba!”
+   - Attention-grabbing introductory sentence (in Hungarian), e.g.:
+     “Van egy ötleted, amit szeretnél profi weboldallá formálni? Írj nekünk bátran! Meséld el, mivel foglalkozol, milyen weboldalt képzeltél el, és mi segítünk megtalálni a legjobb megoldást.”
+   - Contact form fields:
+     - Név
+     - Email cím
+     - Tárgy
+     - Üzenet
+   - Button: “Üzenet küldése”
+   - Simple frontend validation.
+   - Contact info below:
+     - Email (info@novyxdev.hu)
+     - Phone number placeholder
+     - Address placeholder
+ 
+8. FOOTER
+   - Text: “© [current year] NovyxDev. Minden jog fenntartva.”
+   - Links: “Impresszum”, “Adatkezelési tájékoztató” (placeholder links).
+ 
+TECHNICAL REQUIREMENTS
+----------------------
+- React (functional components + hooks).
+- Fully styled with Tailwind CSS.
+- Component structure:
+  - Navbar
+  - Hero
+  - References
+  - Services
+  - Reviews Carousel
+  - About
+  - Contact Form
+  - Footer
+- Dummy data arrays for:
+  - References
+  - Reviews
+  - Services
+- No login, no registration, no authentication.
+- Layout must be responsive on all devices.
+- All visible text must be in Hungarian.
+- Visual style: modern, attention-grabbing, blue–white, no gradients.
+ 
+The final website should look professional, visually engaging, and clearly represent NovyxDev using a blue-white, gradient-free design with fully Hungarian UI.
