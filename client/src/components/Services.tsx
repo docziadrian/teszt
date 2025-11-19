@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Code, Rocket, ShoppingCart, RefreshCw } from "lucide-react";
-import { services } from "@/data/content";
+import { useTranslation } from "react-i18next";
+import type { Service } from "@shared/schema";
 
 const iconMap = {
   Code: Code,
@@ -10,16 +11,18 @@ const iconMap = {
 };
 
 export function Services() {
+  const { t } = useTranslation();
+  const services = t('services.items', { returnObjects: true }) as Service[];
+
   return (
     <section id="services" className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-            Szolgáltatásaink
+            {t('services.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Teljes körű webfejlesztési szolgáltatásokat kínálunk, az ötlettől a
-            kész weboldalig. Bármilyen projekted van, mi segítünk megvalósítani!
+            {t('services.subtitle')}
           </p>
         </div>
 
@@ -51,10 +54,10 @@ export function Services() {
         <div className="space-y-8">
           <div className="text-center">
             <h3 className="text-2xl sm:text-3xl font-bold text-foreground mb-2">
-              Példa weboldalak
+              {t('services.examples.title')}
             </h3>
             <p className="text-muted-foreground">
-              Néhány példa arra, milyen típusú weboldalakat készítünk
+              {t('services.examples.subtitle')}
             </p>
           </div>
 
@@ -69,11 +72,10 @@ export function Services() {
               </div>
               <div className="p-6 space-y-2">
                 <h4 className="font-semibold text-lg text-foreground">
-                  Vállalati weboldal
+                  {t('services.examples.corporate.title')}
                 </h4>
                 <p className="text-sm text-muted-foreground">
-                  Professzionális megjelenés, szolgáltatások bemutatása,
-                  kapcsolatfelvételi lehetőségek
+                  {t('services.examples.corporate.desc')}
                 </p>
               </div>
             </Card>
@@ -88,11 +90,10 @@ export function Services() {
               </div>
               <div className="p-6 space-y-2">
                 <h4 className="font-semibold text-lg text-foreground">
-                  Landing page
+                  {t('services.examples.landing.title')}
                 </h4>
                 <p className="text-sm text-muted-foreground">
-                  Konverziót maximalizáló egyoldalas weboldal termék vagy
-                  szolgáltatás bemutatására
+                  {t('services.examples.landing.desc')}
                 </p>
               </div>
             </Card>
@@ -107,11 +108,10 @@ export function Services() {
               </div>
               <div className="p-6 space-y-2">
                 <h4 className="font-semibold text-lg text-foreground">
-                  E-commerce webshop
+                  {t('services.examples.ecommerce.title')}
                 </h4>
                 <p className="text-sm text-muted-foreground">
-                  Teljes értékű online áruház kosárfunkcióval, fizetési
-                  rendszerrel
+                  {t('services.examples.ecommerce.desc')}
                 </p>
               </div>
             </Card>

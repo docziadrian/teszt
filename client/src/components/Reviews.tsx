@@ -1,8 +1,12 @@
 import { Card } from "@/components/ui/card";
 import { Star } from "lucide-react";
-import { reviews } from "@/data/content";
+import { useTranslation } from "react-i18next";
+import type { Review } from "@shared/schema";
 
 export function Reviews() {
+  const { t } = useTranslation();
+  const reviews = t('reviews.items', { returnObjects: true }) as Review[];
+
   const renderStars = (rating: number) => {
     return (
       <div className="flex gap-0.5">
@@ -28,11 +32,10 @@ export function Reviews() {
       <div className="max-w-7xl mx-auto mb-12">
         <div className="text-center space-y-4">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-            Ügyfeleink mondták rólunk
+            {t('reviews.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Büszkék vagyunk arra, hogy ügyfeleink elégedettek a munkánkkal.
-            Nézd meg, mit mondanak rólunk!
+            {t('reviews.subtitle')}
           </p>
         </div>
       </div>
@@ -62,7 +65,7 @@ export function Reviews() {
 
       <div className="text-center mt-8">
         <p className="text-sm text-muted-foreground">
-          Húzd el az egeret a vélemények felett a megállításhoz
+          {t('reviews.hint')}
         </p>
       </div>
     </section>

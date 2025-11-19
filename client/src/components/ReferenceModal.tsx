@@ -7,6 +7,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Star, Check } from "lucide-react";
 import type { Reference } from "@shared/schema";
+import { useTranslation } from "react-i18next";
 
 interface ReferenceModalProps {
   reference: Reference;
@@ -14,6 +15,8 @@ interface ReferenceModalProps {
 }
 
 export function ReferenceModal({ reference, onClose }: ReferenceModalProps) {
+  const { t } = useTranslation();
+
   const renderStars = (rating: number) => {
     return (
       <div className="flex gap-0.5">
@@ -72,7 +75,7 @@ export function ReferenceModal({ reference, onClose }: ReferenceModalProps) {
 
           {/* Description */}
           <div className="space-y-2">
-            <h3 className="font-semibold text-lg text-foreground">Leírás</h3>
+            <h3 className="font-semibold text-lg text-foreground">{t('references.modal.description')}</h3>
             <p className="text-muted-foreground leading-relaxed">
               {reference.fullDescription}
             </p>
@@ -81,7 +84,7 @@ export function ReferenceModal({ reference, onClose }: ReferenceModalProps) {
           {/* Features */}
           <div className="space-y-3">
             <h3 className="font-semibold text-lg text-foreground">
-              Főbb funkciók
+              {t('references.modal.features')}
             </h3>
             <ul className="space-y-2">
               {reference.features.map((feature, index) => (
@@ -99,7 +102,7 @@ export function ReferenceModal({ reference, onClose }: ReferenceModalProps) {
           {/* Tech Stack */}
           <div className="space-y-3">
             <h3 className="font-semibold text-lg text-foreground">
-              Technológiai stack
+              {t('references.modal.techStack')}
             </h3>
             <div className="flex flex-wrap gap-2">
               {reference.techStack.map((tech) => (

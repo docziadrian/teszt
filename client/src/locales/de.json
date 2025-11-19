@@ -1,0 +1,341 @@
+{
+  "common": {
+    "novyxDev": "NovyxDev"
+  },
+  "nav": {
+    "home": "Startseite",
+    "references": "Referenzen",
+    "services": "Dienstleistungen",
+    "about": "Über uns",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "title": "Professionelle Websites von <1>NovyxDev</1>",
+    "subtitle": "Entwicklung moderner, einzigartiger Websites mit den neuesten Technologien. Ob Unternehmenswebsite, Webshop oder Landingpage, wir verwirklichen Ihr digitales Projekt.",
+    "cta": "Referenzen ansehen",
+    "quote": "Angebot anfordern",
+    "stats": {
+      "projects": "Abgeschlossene Projekte",
+      "clients": "Zufriedene Kunden",
+      "experience": "Jahre Erfahrung"
+    },
+    "floatingCard": {
+      "title": "Schnelle Entwicklung",
+      "subtitle": "2-4 Wochen Bearbeitungszeit"
+    }
+  },
+  "references": {
+    "title": "Unsere Referenzen",
+    "subtitle": "Wir sind stolz auf das, was wir bisher erreicht haben. Sehen Sie sich unsere neuesten Projekte an und überzeugen Sie sich von unserer Expertise!",
+    "filters": {
+      "category": "Kategorie",
+      "tech": "Technologie",
+      "all": "Alle"
+    },
+    "noResults": "Keine Ergebnisse für die ausgewählten Filter.",
+    "categories": {
+      "Mind": "Alle",
+      "Vállalati": "Unternehmen",
+      "Webshop": "Webshop",
+      "Landing page": "Landingpage",
+      "Egyéb": "Andere"
+    },
+    "modal": {
+      "description": "Beschreibung",
+      "features": "Hauptfunktionen",
+      "techStack": "Technologie-Stack"
+    },
+    "items": [
+      {
+        "id": "1",
+        "name": "TechVision Consulting",
+        "category": "Unternehmen",
+        "shortDescription": "Moderne Unternehmenswebsite mit komplexer Leistungspräsentation und Kundenportal.",
+        "fullDescription": "Eine komplexe Unternehmenswebsite für TechVision Consulting, die das breite Leistungsportfolio des Unternehmens mit modernem Design und benutzerfreundlicher Oberfläche präsentiert. Die Seite beinhaltet ein Login-pflichtiges Kundenportal, dynamisches Content-Management und mehrsprachige Unterstützung.",
+        "techStack": ["React", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
+        "imageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+        "images": [
+          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop"
+        ],
+        "rating": 5,
+        "clientName": "Magyar Zsolt, TechVision CEO",
+        "clientQuote": "Hervorragende Arbeit! Die Website bietet genau das, was wir brauchten. Professionelle, schnelle und effiziziente Zusammenarbeit.",
+        "features": [
+          "Responsives Design auf allen Geräten",
+          "Login-pflichtiges Kundenportal",
+          "Dynamisches Content-Management-System",
+          "SEO-Optimierung",
+          "Mehrsprachige Unterstützung (HU/EN)"
+        ]
+      },
+      {
+        "id": "2",
+        "name": "FreshMarket Webshop",
+        "category": "Webshop",
+        "shortDescription": "Umfassende E-Commerce-Plattform für den Online-Verkauf von frischen Lebensmitteln.",
+        "fullDescription": "Komplette Webshop-Lösung für FreshMarket, die den Online-Verkauf von frischen Lebensmitteln ermöglicht. Die Seite beinhaltet Warenkorbfunktion, Zahlungs-Gateway-Integration, Lagerverwaltung und automatische Bestellabwicklung.",
+        "techStack": ["React", "Node.js", "Stripe", "MongoDB", "Redis"],
+        "imageUrl": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+        "images": [
+          "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&h=600&fit=crop"
+        ],
+        "rating": 5,
+        "clientName": "Kovács Anna, FreshMarket Inhaber",
+        "clientQuote": "Fantastisches Ergebnis! Unser Umsatz ist seit Einführung des neuen Webshops um 40% gestiegen. Vielen Dank für die präzise Arbeit!",
+        "features": [
+          "Warenkorb- und Zahlungssystem",
+          "Stripe-Zahlungsintegration",
+          "Lagerverwaltung",
+          "Verwaltungsoberfläche",
+          "Automatische E-Mail-Benachrichtigungen"
+        ]
+      },
+      {
+        "id": "3",
+        "name": "EventHub Landing",
+        "category": "Landingpage",
+        "shortDescription": "Klare Landingpage zur Präsentation einer Event-Organisationsplattform.",
+        "fullDescription": "Professionelle Landingpage für die EventHub Event-Organisationsplattform. Ziel war eine konversionsmaximierende, moderne One-Page-Website, die die Vorteile der Plattform effektiv präsentiert und zur Registrierung anregt.",
+        "techStack": ["React", "Tailwind CSS", "Framer Motion"],
+        "imageUrl": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop",
+        "images": [
+          "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop"
+        ],
+        "rating": 5,
+        "clientName": "Nagy Péter, EventHub Marketing Lead",
+        "clientQuote": "Die Konversionsrate der Landingpage ist hervorragend! Modernes, auffälliges Design, schnelle Ladezeit. Hat alle unsere Erwartungen übertroffen.",
+        "features": [
+          "Animierter Hero-Bereich",
+          "Konversionsoptimierte CTAs",
+          "Schnelle Ladezeit",
+          "Optimiert für A/B-Tests",
+          "Google Analytics Integration"
+        ]
+      },
+      {
+        "id": "4",
+        "name": "HealthPlus Klinik",
+        "category": "Unternehmen",
+        "shortDescription": "Komplexe Webpräsenz für eine Gesundheitsklinik mit Terminbuchung.",
+        "fullDescription": "Komplexe Website für die Privatklinik HealthPlus, inklusive Online-Terminbuchungssystem, Arztprofilseiten, Leistungspräsentationen und Blogfunktion. Das moderne, saubere Erscheinungsbild der Seite schafft Vertrauen bei den Besuchern.",
+        "techStack": ["React", "TypeScript", "Node.js", "PostgreSQL", "Next.js"],
+        "imageUrl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop",
+        "images": [
+          "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop",
+          "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop"
+        ],
+        "rating": 5,
+        "clientName": "Dr. Szabó Katalin, HealthPlus Direktor",
+        "clientQuote": "Ausgezeichnete Arbeit! Die Online-Terminbuchung hat unseren Verwaltungsaufwand erheblich reduziert, und die Patienten lieben das System.",
+        "features": [
+          "Online-Terminbuchung",
+          "Arztprofilseiten",
+          "Blog und Neuigkeiten",
+          "E-Mail-Benachrichtigungssystem",
+          "Patientenportal"
+        ]
+      },
+      {
+        "id": "5",
+        "name": "StyleBoutique Shop",
+        "category": "Webshop",
+        "shortDescription": "Premium-Mode-Webshop mit einzigartigen Produkten und Stilberater.",
+        "fullDescription": "Eleganter Webshop für StyleBoutique mit Premium-Damen- und Herrenbekleidung. Die Seite beinhaltet einen interaktiven Stilberater, detaillierte Produktpräsentationen, Wunschlistenfunktion und integrierte Social-Media-Funktionen.",
+        "techStack": ["React", "Next.js", "Shopify API", "Tailwind CSS", "Vercel"],
+        "imageUrl": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop",
+        "images": [
+          "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop"
+        ],
+        "rating": 4,
+        "clientName": "Tóth Eszter, StyleBoutique Brand Manager",
+        "clientQuote": "Wunderbare Arbeit! Der interaktive Stilberater bietet unseren Kunden ein einzigartiges Erlebnis.",
+        "features": [
+          "Interaktiver Stilberater",
+          "Wunschlistenfunktion",
+          "Shopify-Integration",
+          "Social-Media-Integration",
+          "Produkt-Schnellansicht"
+        ]
+      },
+      {
+        "id": "6",
+        "name": "FitLife Gym",
+        "category": "Unternehmen",
+        "shortDescription": "Fitnessstudio-Website mit Kursplanfreigabe und Mitgliederverwaltung.",
+        "fullDescription": "Moderne Fitnessstudio-Website mit interaktiver Kursplanansicht, Trainervorstellungen und Online-Mitgliedschaftskaufoptionen. Das responsive Design der Seite funktioniert perfekt auf Mobilgeräten, sodass Mitglieder den Kursplan unterwegs überprüfen können.",
+        "techStack": ["React", "Firebase", "Tailwind CSS"],
+        "imageUrl": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop",
+        "images": [
+          "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=600&fit=crop"
+        ],
+        "rating": 4,
+        "clientName": "Kiss Gábor, FitLife Inhaber",
+        "clientQuote": "Wir sind sehr zufrieden! Unsere Mitglieder nutzen die Online-Kursplanfunktion häufig.",
+        "features": [
+          "Interaktiver Kursplan",
+          "Trainervorstellungsseite",
+          "Online-Mitgliedschaftskauf",
+          "Mobile App-Kompatibilität",
+          "Push-Benachrichtigungen"
+        ]
+      }
+    ]
+  },
+  "services": {
+    "title": "Unsere Dienstleistungen",
+    "subtitle": "Wir bieten umfassende Webentwicklungsdienste, von der Idee bis zur fertigen Website. Was auch immer Ihr Projekt ist, wir helfen Ihnen bei der Umsetzung!",
+    "items": [
+      {
+        "id": "1",
+        "title": "Individuelle Webentwicklung",
+        "description": "Erstellung vollständig personalisierter Websites mit modernsten Technologien. Responsives Design, schnelles Laden, SEO-Optimierung.",
+        "icon": "Code"
+      },
+      {
+        "id": "2",
+        "title": "Landingpage-Erstellung",
+        "description": "Konversionsmaximierende One-Page-Websites, die Ihr Produkt oder Ihre Dienstleistung effektiv präsentieren und Besucher zum Handeln anregen.",
+        "icon": "Rocket"
+      },
+      {
+        "id": "3",
+        "title": "Webshop-Entwicklung",
+        "description": "Umfassende E-Commerce-Lösungen mit Warenkorbfunktion, Zahlungssystemintegration, Lagerverwaltung und Verwaltungsoberfläche.",
+        "icon": "ShoppingCart"
+      },
+      {
+        "id": "4",
+        "title": "Website-Redesign",
+        "description": "Auffrischung Ihrer veralteten Website mit modernem, benutzerfreundlichem Design. Wir behalten bestehende Inhalte bei, hauchen ihnen aber neues Leben ein.",
+        "icon": "RefreshCw"
+      }
+    ],
+    "examples": {
+      "title": "Beispiel-Websites",
+      "subtitle": "Einige Beispiele für die Arten von Websites, die wir erstellen",
+      "corporate": {
+        "title": "Unternehmenswebsite",
+        "desc": "Professionelles Erscheinungsbild, Leistungspräsentation, Kontaktmöglichkeiten"
+      },
+      "landing": {
+        "title": "Landingpage",
+        "desc": "Konversionsmaximierende One-Page-Website zur Produkt- oder Leistungspräsentation"
+      },
+      "ecommerce": {
+        "title": "E-Commerce-Webshop",
+        "desc": "Vollwertiger Online-Shop mit Warenkorbfunktion, Zahlungssystem"
+      }
+    }
+  },
+  "reviews": {
+    "title": "Was unsere Kunden sagen",
+    "subtitle": "Wir sind stolz darauf, dass unsere Kunden mit unserer Arbeit zufrieden sind. Sehen Sie, was sie über uns sagen!",
+    "hint": "Fahren Sie mit der Maus über die Bewertungen, um anzuhalten",
+    "items": [
+      { "id": "1", "clientName": "Molnár Rita", "rating": 5, "text": "Fantastisches Team! Sie haben meine Vision genau verstanden und eine wunderschöne Website erstellt. Die Kommunikation war durchweg hervorragend, ich erhielt sofort Antworten auf alle meine Fragen." },
+      { "id": "2", "clientName": "Horváth Tamás", "rating": 5, "text": "Professionelle, schnelle und zuverlässige Arbeit. Unser Website-Traffic ist seit Einführung des neuen Designs deutlich gestiegen. Ich kann sie jedem empfehlen!" },
+      { "id": "3", "clientName": "Varga Judit", "rating": 5, "text": "Hervorragendes Preis-Leistungs-Verhältnis! Unser Webshop hat alle unsere Erwartungen erfüllt. Ihr Kundensupport ist ebenfalls hervorragend, sie helfen jederzeit, wenn nötig." },
+      { "id": "4", "clientName": "Farkas Zsolt", "rating": 4, "text": "Ich bin sehr zufrieden mit dem Ergebnis. Modernes, sauberes Design, schnelles Laden. Ich habe um zwei kleine Änderungen gebeten, die sie sofort gelöst haben." },
+      { "id": "5", "clientName": "Lakatos Éva", "rating": 5, "text": "Die beste Entscheidung war, mit ihnen zu arbeiten! Kreativ, professionell und detailorientiert. Unsere Landingpage-Konversionsrate hat sich verdoppelt!" },
+      { "id": "6", "clientName": "Németh András", "rating": 5, "text": "Professionelle Einstellung von Anfang bis zur endgültigen Übergabe. Die Seite ist schnell, modern und bietet genau das, was unser Unternehmen brauchte." },
+      { "id": "7", "clientName": "Balogh Márta", "rating": 5, "text": "Wir haben nicht nur eine Website bekommen, sondern eine komplette digitale Präsenz. SEO, Design, Funktionalität - alles ist perfekt geworden!" },
+      { "id": "8", "clientName": "Papp Gergő", "rating": 4, "text": "Ausgezeichnete Arbeit, präzise Fristen. Das Einzige, was ich mir besser gewünscht hätte, wäre eine detailliertere erste Anleitung, aber das ist nur ein kleines Detail." }
+    ]
+  },
+  "about": {
+    "title": "Wer sind wir?",
+    "subtitle": "Das NovyxDev-Team besteht aus leidenschaftlichen Webentwicklern, die glauben, dass jedes Unternehmen eine professionelle Online-Präsenz verdient.",
+    "mission": {
+      "title": "Unsere Mission",
+      "text": "Unser Ziel ist es, für jeden Kunden einzigartige, hochwertige Websites zu erstellen, die nicht nur schön, sondern auch funktional herausragend sind. Wir glauben, dass eine gute Website die Grundlage für ein erfolgreiches Unternehmen ist."
+    },
+    "story": {
+      "title": "Unsere Geschichte",
+      "text": "Wir begannen 2018 mit dem Ziel, ungarischen Kleinunternehmen Zugang zu erstklassigen Webentwicklungsdiensten zu ermöglichen. Seitdem haben wir über 50 erfolgreiche Projekte realisiert und erweitern unser Fachwissen ständig um neue Technologien."
+    },
+    "whyUs": {
+      "title": "Warum uns wählen?",
+      "items": [
+        "Schnelle und effiziente Arbeit - durchschnittlich 2-4 Wochen Bearbeitungszeit",
+        "Moderne Technologien - React, TypeScript, Node.js",
+        "Responsives Design auf allen Geräten",
+        "SEO-optimierte Websites",
+        "Kontinuierlicher Support und Wartung",
+        "Transparente Preisgestaltung - keine versteckten Kosten"
+      ]
+    },
+    "team": {
+      "title": "Unser Team",
+      "subtitle": "Lernen Sie das NovyxDev-Team kennen",
+      "items": [
+        {
+          "id": "1",
+          "name": "Kovács Márk",
+          "role": "Lead Developer",
+          "description": "10+ Jahre Erfahrung in Full-Stack-Entwicklung. Experte in React, Node.js und Cloud-Technologien.",
+          "imageUrl": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop"
+        },
+        {
+          "id": "2",
+          "name": "Nagy Viktória",
+          "role": "UI/UX Designer",
+          "description": "Leidenschaftlicher Designer, der die Benutzererfahrung in den Mittelpunkt stellt. Gewinner mehrerer internationaler Designpreise.",
+          "imageUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop"
+        },
+        {
+          "id": "3",
+          "name": "Szabó Dávid",
+          "role": "Backend-Experte",
+          "description": "Spezialist für Datenbankarchitektur und API-Entwicklung. Sucht immer nach den optimalsten Lösungen.",
+          "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop"
+        },
+        {
+          "id": "4",
+          "name": "Tóth Lilla",
+          "role": "Projektmanager",
+          "description": "Sorgt dafür, dass jedes Projekt pünktlich und innerhalb des Budgets abgeschlossen wird. Hervorragende Kommunikationsfähigkeiten.",
+          "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
+        }
+      ]
+    }
+  },
+  "contact": {
+    "title": "Kontaktieren Sie uns!",
+    "subtitle": "Haben Sie eine Idee, die Sie in eine professionelle Website verwandeln möchten? Schreiben Sie uns mutig! Erzählen Sie uns, was Sie tun, welche Art von Website Sie sich vorgestellt haben, und wir helfen Ihnen, die beste Lösung zu finden.",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Ihr vollständiger Name",
+      "email": "E-Mail-Adresse",
+      "emailPlaceholder": "email@beispiel.de",
+      "subject": "Betreff",
+      "subjectPlaceholder": "Wie können wir helfen?",
+      "message": "Nachricht",
+      "messagePlaceholder": "Beschreiben Sie Ihr Projekt und Ihre Ideen im Detail...",
+      "submit": "Nachricht senden",
+      "sending": "Senden...",
+      "successTitle": "Nachricht gesendet!",
+      "successDesc": "Vielen Dank für Ihre Anfrage! Wir werden uns in Kürze bei Ihnen melden.",
+      "errorTitle": "Ein Fehler ist aufgetreten",
+      "errorDesc": "Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es später erneut."
+    },
+    "info": {
+      "title": "Unsere Kontakte",
+      "subtitle": "Zögern Sie nicht, uns über eine unserer Kontaktmöglichkeiten zu erreichen! Wir beantworten jede Anfrage innerhalb von 24 Stunden.",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "address": "Adresse",
+      "addressText": "1111 Budapest<br />Beispielstraße 42."
+    },
+    "card": {
+      "title": "Schnelle Reaktionszeit",
+      "text": "Wir antworten in der Regel auf jede Anfrage innerhalb von 2-4 Stunden während der Arbeitszeit (Mo-Fr 9:00-17:00). Wir versuchen, auch am Wochenende so schnell wie möglich zu reagieren."
+    }
+  },
+  "footer": {
+    "rights": "© {{year}} NovyxDev. Alle Rechte vorbehalten.",
+    "impressum": "Impressum",
+    "privacy": "Datenschutzerklärung"
+  }
+}

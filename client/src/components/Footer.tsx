@@ -1,4 +1,7 @@
+import { useTranslation } from "react-i18next";
+
 export function Footer() {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -6,9 +9,9 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
-            <div className="text-2xl font-bold text-primary mb-2">NovyxDev</div>
+            <div className="text-2xl font-bold text-primary mb-2">{t('common.novyxDev')}</div>
             <p className="text-sm text-muted-foreground">
-              © {currentYear} NovyxDev. Minden jog fenntartva.
+              {t('footer.rights', { year: currentYear })}
             </p>
           </div>
 
@@ -18,14 +21,14 @@ export function Footer() {
               className="text-sm text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 rounded-md transition-colors"
               data-testid="link-impresszum"
             >
-              Impresszum
+              {t('footer.impressum')}
             </a>
             <a
               href="#"
               className="text-sm text-muted-foreground hover:text-foreground hover-elevate px-2 py-1 rounded-md transition-colors"
               data-testid="link-privacy"
             >
-              Adatkezelési tájékoztató
+              {t('footer.privacy')}
             </a>
           </div>
         </div>

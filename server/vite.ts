@@ -55,11 +55,27 @@ export async function setupVite(app: Express, server: Server) {
       // always reload the index.html file from disk incase it changes
       let template = await fs.promises.readFile(clientTemplate, "utf-8");
       template = template.replace(
-        `src="/src/main.tsx"`,
-        `src="/src/main.tsx?v=${nanoid()}"`,
+        `src="/src/entry-client.tsx"`,
+        `src="/src/entry-client.tsx?v=${nanoid()}"`,
       );
       const page = await vite.transformIndexHtml(url, template);
-      res.status(200).set({ "Content-Type": "text/html" }).end(page);
+      
+      const { render } = await vite.ssrLoadModule("client/src/entry-server.tsx");
+      const { appHtml, helmetContext } = await render(url);
+      
+      const { helmet } = helmetContext;
+      const headHtml = `
+        ${helmet.title ? helmet.title.toString() : ''}
+        ${helmet.meta ? helmet.meta.toString() : ''}
+        ${helmet.link ? helmet.link.toString() : ''}
+        ${helmet.script ? helmet.script.toString() : ''}
+      `;
+
+      const html = page
+        .replace("<!--app-head-->", headHtml)
+        .replace("<!--app-html-->", appHtml);
+
+      res.status(200).set({ "Content-Type": "text/html" }).end(html);
     } catch (e) {
       vite.ssrFixStacktrace(e as Error);
       next(e);
@@ -79,7 +95,38 @@ export function serveStatic(app: Express) {
   app.use(express.static(distPath));
 
   // fall through to index.html if the file doesn't exist
-  app.use("*", (_req, res) => {
-    res.sendFile(path.resolve(distPath, "index.html"));
+  app.use("*", async (req, res, next) => {
+    try {
+      const url = req.originalUrl;
+      const template = fs.readFileSync(path.resolve(distPath, "index.html"), "utf-8");
+      
+      // Dynamic import of the server bundle
+      const serverEntryPath = path.resolve(import.meta.dirname, "server", "entry-server.js");
+      
+      // Check if server entry exists
+      if (fs.existsSync(serverEntryPath)) {
+        const { render } = await import(serverEntryPath);
+        const { appHtml, helmetContext } = await render(url);
+        
+        const { helmet } = helmetContext;
+        const headHtml = `
+          ${helmet.title ? helmet.title.toString() : ''}
+          ${helmet.meta ? helmet.meta.toString() : ''}
+          ${helmet.link ? helmet.link.toString() : ''}
+          ${helmet.script ? helmet.script.toString() : ''}
+        `;
+
+        const html = template
+          .replace("<!--app-head-->", headHtml)
+          .replace("<!--app-html-->", appHtml);
+          
+        res.status(200).set({ "Content-Type": "text/html" }).end(html);
+      } else {
+        // Fallback to CSR if server build is missing (though ideally should not happen)
+        res.status(200).set({ "Content-Type": "text/html" }).end(template);
+      }
+    } catch (e) {
+      next(e);
+    }
   });
 }

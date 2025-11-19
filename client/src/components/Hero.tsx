@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Eye, Rocket } from "lucide-react";
+import { useTranslation, Trans } from "react-i18next";
 
 export function Hero() {
+  const { t } = useTranslation();
+
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
@@ -20,13 +23,12 @@ export function Hero() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Professzionális weboldalak a{" "}
-                <span className="text-primary">NovyxDev-től</span>
+                <Trans i18nKey="hero.title">
+                  Professzionális weboldalak a <span className="text-primary">NovyxDev-től</span>
+                </Trans>
               </h1>
               <p className="text-lg sm:text-xl text-muted-foreground">
-                Modern, egyedi weboldalak fejlesztése a legújabb technológiákkal.
-                Legyen szó vállalati weboldalról, webshopról vagy landing page-ről,
-                mi megvalósítjuk álmaid digitális projektjét.
+                {t('hero.subtitle')}
               </p>
             </div>
 
@@ -38,7 +40,7 @@ export function Hero() {
                 data-testid="button-view-references"
               >
                 <Eye className="w-5 h-5" />
-                Referenciáink megtekintése
+                {t('hero.cta')}
               </Button>
               <Button
                 size="lg"
@@ -48,22 +50,22 @@ export function Hero() {
                 data-testid="button-request-quote"
               >
                 <ArrowRight className="w-5 h-5" />
-                Ajánlatkérés
+                {t('hero.quote')}
               </Button>
             </div>
 
             <div className="flex gap-8 pt-4">
               <div>
                 <div className="text-3xl font-bold text-primary">50+</div>
-                <div className="text-sm text-muted-foreground">Elkészült projekt</div>
+                <div className="text-sm text-muted-foreground">{t('hero.stats.projects')}</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-primary">100%</div>
-                <div className="text-sm text-muted-foreground">Elégedett ügyfél</div>
+                <div className="text-sm text-muted-foreground">{t('hero.stats.clients')}</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-primary">5+</div>
-                <div className="text-sm text-muted-foreground">Év tapasztalat</div>
+                <div className="text-sm text-muted-foreground">{t('hero.stats.experience')}</div>
               </div>
             </div>
           </div>
@@ -107,8 +109,8 @@ export function Hero() {
                   <Rocket className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <div className="font-semibold text-foreground">Gyors fejlesztés</div>
-                  <div className="text-sm text-muted-foreground">2-4 hét átfutás</div>
+                  <div className="font-semibold text-foreground">{t('hero.floatingCard.title')}</div>
+                  <div className="text-sm text-muted-foreground">{t('hero.floatingCard.subtitle')}</div>
                 </div>
               </div>
             </div>

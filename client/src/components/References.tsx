@@ -1,23 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
-import { references } from "@/data/content";
 import type { Reference } from "@shared/schema";
 import { ReferenceModal } from "./ReferenceModal";
+import { useTranslation } from "react-i18next";
 
-const categories = ["Mind", "Vállalati", "Webshop", "Landing page", "Egyéb"];
 const techStacks = ["React", "TypeScript", "Node.js", "Next.js", "WordPress", "Tailwind CSS"];
 
 export function References() {
-  const [selectedCategory, setSelectedCategory] = useState("Mind");
+  const { t, i18n } = useTranslation();
+  
+  const categoriesMap = t('references.categories', { returnObjects: true }) as Record<string, string>;
+  const allCategory = categoriesMap["Mind"];
+  
+  const [selectedCategory, setSelectedCategory] = useState(allCategory);
   const [selectedTech, setSelectedTech] = useState<string[]>([]);
   const [selectedReference, setSelectedReference] = useState<Reference | null>(null);
 
+  // Reset category on language change to avoid mismatch
+  useEffect(() => {
+    setSelectedCategory(allCategory);
+  }, [i18n.language]);
+
+  const references = t('references.items', { returnObjects: true }) as Reference[];
+  const categories = Object.values(categoriesMap);
+
   const filteredReferences = references.filter((ref) => {
     const categoryMatch =
-      selectedCategory === "Mind" || ref.category === selectedCategory;
+      selectedCategory === allCategory || ref.category === selectedCategory;
     const techMatch =
       selectedTech.length === 0 ||
       selectedTech.some((tech) => ref.techStack.includes(tech));
@@ -52,11 +64,10 @@ export function References() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-            Referencia munkáink
+            {t('references.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Büszkék vagyunk arra, amit eddig elértünk. Nézd meg legfrissebb projektjeinket
-            és győződj meg szakértelmünkről!
+            {t('references.subtitle')}
           </p>
         </div>
 
@@ -65,7 +76,7 @@ export function References() {
           {/* Category filter */}
           <div>
             <div className="text-sm font-medium text-muted-foreground mb-3">
-              Kategória
+              {t('references.filters.category')}
             </div>
             <div className="flex flex-wrap gap-2">
               {categories.map((category) => (
@@ -85,7 +96,7 @@ export function References() {
           {/* Tech filter */}
           <div>
             <div className="text-sm font-medium text-muted-foreground mb-3">
-              Technológia
+              {t('references.filters.tech')}
             </div>
             <div className="flex flex-wrap gap-2">
               {techStacks.map((tech) => (
@@ -159,7 +170,7 @@ export function References() {
         {filteredReferences.length === 0 && (
           <div className="text-center py-12">
             <p className="text-muted-foreground">
-              Nincs találat a megadott szűrési feltételekkel.
+              {t('references.noResults')}
             </p>
           </div>
         )}

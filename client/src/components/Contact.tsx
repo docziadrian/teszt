@@ -14,12 +14,14 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { insertContactMessageSchema, type InsertContactMessage } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
+import { useTranslation, Trans } from "react-i18next";
 
 export function Contact() {
   const { toast } = useToast();
+  const { t } = useTranslation();
 
   const form = useForm<InsertContactMessage>({
     resolver: zodResolver(insertContactMessageSchema),
@@ -39,15 +41,15 @@ export function Contact() {
     onSuccess: () => {
       form.reset();
       toast({
-        title: "Üzenet elküldve!",
-        description: "Köszönjük a megkeresést! Hamarosan felvesszük veled a kapcsolatot.",
+        title: t('contact.form.successTitle'),
+        description: t('contact.form.successDesc'),
         duration: 5000,
       });
     },
     onError: (error: any) => {
       toast({
-        title: "Hiba történt",
-        description: error.message || "Nem sikerült elküldeni az üzenetet. Kérjük, próbáld újra később.",
+        title: t('contact.form.errorTitle'),
+        description: error.message || t('contact.form.errorDesc'),
         variant: "destructive",
         duration: 5000,
       });
@@ -63,12 +65,10 @@ export function Contact() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
-            Lépj velünk kapcsolatba!
+            {t('contact.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Van egy ötleted, amit szeretnél profi weboldallá formálni? Írj nekünk
-            bátran! Meséld el, mivel foglalkozol, milyen weboldalt képzeltél el, és
-            mi segítünk megtalálni a legjobb megoldást.
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -82,10 +82,10 @@ export function Contact() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Név</FormLabel>
+                      <FormLabel>{t('contact.form.name')}</FormLabel>
                       <FormControl>
                         <Input
-                          placeholder="Teljes neved"
+                          placeholder={t('contact.form.namePlaceholder')}
                           {...field}
                           data-testid="input-name"
                         />
@@ -100,11 +100,11 @@ export function Contact() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email cím</FormLabel>
+                      <FormLabel>{t('contact.form.email')}</FormLabel>
                       <FormControl>
                         <Input
                           type="email"
-                          placeholder="email@pelda.hu"
+                          placeholder={t('contact.form.emailPlaceholder')}
                           {...field}
                           data-testid="input-email"
                         />
@@ -119,10 +119,10 @@ export function Contact() {
                   name="subject"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Tárgy</FormLabel>
+                      <FormLabel>{t('contact.form.subject')}</FormLabel>
                       <FormControl>
                         <Input
-                          placeholder="Miben segíthetünk?"
+                          placeholder={t('contact.form.subjectPlaceholder')}
                           {...field}
                           data-testid="input-subject"
                         />
@@ -137,10 +137,10 @@ export function Contact() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Üzenet</FormLabel>
+                      <FormLabel>{t('contact.form.message')}</FormLabel>
                       <FormControl>
                         <Textarea
-                          placeholder="Írd le részletesen a projektedet, elképzeléseidet..."
+                          placeholder={t('contact.form.messagePlaceholder')}
                           rows={6}
                           {...field}
                           data-testid="input-message"
@@ -159,7 +159,7 @@ export function Contact() {
                   data-testid="button-submit"
                 >
                   <Send className="w-5 h-5" />
-                  {contactMutation.isPending ? "Küldés..." : "Üzenet küldése"}
+                  {contactMutation.isPending ? t('contact.form.sending') : t('contact.form.submit')}
                 </Button>
               </form>
             </Form>
@@ -169,11 +169,10 @@ export function Contact() {
           <div className="space-y-8">
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-6">
-                Elérhetőségeink
+                {t('contact.info.title')}
               </h3>
               <p className="text-muted-foreground leading-relaxed mb-8">
-                Bátran keress minket bármelyik elérhetőségünkön! Válaszolunk minden
-                megkeresésre 24 órán belül.
+                {t('contact.info.subtitle')}
               </p>
 
               <div className="space-y-6">
@@ -182,7 +181,7 @@ export function Contact() {
                     <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <div className="font-medium text-foreground mb-1">Email</div>
+                    <div className="font-medium text-foreground mb-1">{t('contact.info.email')}</div>
                     <a
                       href="mailto:info@novyxdev.hu"
                       className="text-primary hover:underline"
@@ -198,7 +197,7 @@ export function Contact() {
                     <Phone className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <div className="font-medium text-foreground mb-1">Telefon</div>
+                    <div className="font-medium text-foreground mb-1">{t('contact.info.phone')}</div>
                     <a
                       href="tel:+36301234567"
                       className="text-primary hover:underline"
@@ -214,10 +213,9 @@ export function Contact() {
                     <MapPin className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <div className="font-medium text-foreground mb-1">Cím</div>
+                    <div className="font-medium text-foreground mb-1">{t('contact.info.address')}</div>
                     <p className="text-muted-foreground">
-                      1111 Budapest<br />
-                      Példa utca 42.
+                      <Trans i18nKey="contact.info.addressText" />
                     </p>
                   </div>
                 </div>
@@ -226,11 +224,10 @@ export function Contact() {
 
             <Card className="p-6 bg-primary/5 border-primary/20">
               <h4 className="font-semibold text-foreground mb-3">
-                Gyors válaszidő
+                {t('contact.card.title')}
               </h4>
               <p className="text-sm text-muted-foreground">
-                Általában 2-4 órán belül válaszolunk minden megkeresésre munkaidőben
-                (H-P 9:00-17:00). Hétvégén is igyekszünk mielőbb reagálni.
+                {t('contact.card.text')}
               </p>
             </Card>
           </div>
